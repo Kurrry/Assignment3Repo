@@ -1,8 +1,9 @@
 package sait.sll.utility;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class SLL implements LinkedListADT {
+public class SLL implements LinkedListADT, Serializable {
     Node head;
     Node tail;
     private int size;
@@ -253,7 +254,7 @@ public class SLL implements LinkedListADT {
         }
     }
 
-    static class Node {
+     class Node implements Serializable {
         private Object element;
         private Node next;
 

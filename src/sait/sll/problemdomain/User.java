@@ -1,19 +1,21 @@
 package sait.sll.problemdomain;
 
+import java.io.Serializable;
+
 /**
  * Represents a user.
  * @author Nick Hamnett
  * @version 2019-07-25
  *
  */
-public class User {
+public class User implements Serializable {
 	private int id;
 	
 	private String name;
 	
 	private String email;
 	
-	private String password;
+	transient private String password;
 	
 	/**
 	 * Initializes a User object.
