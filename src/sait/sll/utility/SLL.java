@@ -95,8 +95,6 @@ public class SLL implements LinkedListADT, Serializable {
                 size++;
             }
         }
-
-
     }
 
     /**
@@ -232,15 +230,9 @@ public class SLL implements LinkedListADT, Serializable {
      */
     @Override
     public boolean contains(Object data) {
-        Node current = head;
+        int index = indexOf(data);
 
-        for (int i = 0; i < this.size() - 1; i++) {
-            if (data.equals(current.element)) {
-                return true;
-            }
-            current = current.next;
-        }
-        return false;
+        return index >= 0;
     }
 
     /**
