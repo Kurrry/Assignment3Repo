@@ -82,7 +82,7 @@ public class SLL implements LinkedListADT, Serializable {
             return;
         }
 
-        if(index == this.size() - 1) {
+        if(index == this.size()) {
             append(data);
             return;
         }
@@ -147,7 +147,11 @@ public class SLL implements LinkedListADT, Serializable {
      */
     @Override
     public void delete(int index) throws IndexOutOfBoundsException {
-        checkIndex(index);
+        // cannot be checked using checkIndex method because it does not throw
+        // at the appropriate index
+        if (index < 0 || index > this.size() - 1) {
+            throw new IndexOutOfBoundsException();
+        }
 
         Node current = head;
         Node previous;
@@ -241,7 +245,7 @@ public class SLL implements LinkedListADT, Serializable {
      * @throws IndexOutOfBoundsException if the index is less than 1 or greater than the size of the list - 1
      */
     private void checkIndex(int index) throws IndexOutOfBoundsException {
-        if (index < 0 || index > this.size() - 1) {
+        if (index < 0 || index > this.size()) {
             throw new IndexOutOfBoundsException();
         }
     }
