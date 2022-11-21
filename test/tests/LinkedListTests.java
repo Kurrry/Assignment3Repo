@@ -179,7 +179,7 @@ class LinkedListTests {
 		/**
 		 * Linked list should now be:
 		 *
-		 * a -> b -> e -> c -> d
+		 * e -> a -> b -> c -> d
 		 */
 
 		// Test the linked list is not empty.
@@ -219,7 +219,7 @@ class LinkedListTests {
 		/**
 		 * Linked list should now be:
 		 *
-		 * a -> b -> e -> c -> d
+		 * a -> b -> c -> d -> e
 		 */
 
 		// Test the linked list is not empty.
@@ -253,7 +253,6 @@ class LinkedListTests {
 		this.linkedList.append("b");
 		this.linkedList.append("c");
 		this.linkedList.append("d");
-
 
 		try {
 			this.linkedList.insert("e", 5);
@@ -315,7 +314,7 @@ class LinkedListTests {
 		/**
 		 * Linked list should now be:
 		 *
-		 * a -> b -> e -> d
+		 * e -> b -> c -> d
 		 */
 
 		// Test the linked list is not empty.
@@ -352,7 +351,7 @@ class LinkedListTests {
 		/**
 		 * Linked list should now be:
 		 *
-		 * a -> b -> e -> d
+		 * a -> b -> c -> e
 		 */
 
 		// Test the linked list is not empty.
@@ -375,7 +374,7 @@ class LinkedListTests {
 	}
 
 	/**
-	 * Tests replacing existing nodes data.
+	 * Tests replacing non-existing nodes data.
 	 */
 	@Test
 	void testNotReplaceNode() {
@@ -568,7 +567,8 @@ class LinkedListTests {
 	}
 
 	/**
-	 * Tests the index of a given data if the data is not present on a node in the linked list
+	 * Tests the index of a given data if the data is not present on a node in the
+	 * linked list
 	 */
 	@Test
 	void testNotIndexOf() {
@@ -600,7 +600,8 @@ class LinkedListTests {
 	}
 
 	/**
-	 * Tests contains method for if it will return false if something is not on the list.
+	 * Tests contains method for if it will return false if something is not on the
+	 * list.
 	 */
 	@Test
 	void testNotContains() {
