@@ -75,7 +75,7 @@ public class SLL implements LinkedListADT, Serializable {
     public void insert(Object data, int index) throws IndexOutOfBoundsException {
         checkIndex(index);
         Node current = head;
-        Node previous;
+        Node previous = head;
 
         if(index == 0) {
             prepend(data);
@@ -90,11 +90,10 @@ public class SLL implements LinkedListADT, Serializable {
         for (int i = 0; i < index; i++) {
             previous = current;
             current = current.next;
-            if (i == index - 1) {
-                previous.next = new Node(data, current);
-                size++;
-            }
         }
+
+        previous.next = new Node(data, current);
+        size++;
     }
 
     /**
