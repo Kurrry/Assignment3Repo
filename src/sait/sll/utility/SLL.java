@@ -154,7 +154,7 @@ public class SLL implements LinkedListADT, Serializable {
         }
 
         Node current = head;
-        Node previous;
+        Node previous = null;
 
         if (index == 0) {
             head = current.next;
@@ -163,13 +163,12 @@ public class SLL implements LinkedListADT, Serializable {
             return;
         }
 
-        for (int i = 0; i <= index; i++) {
+        for (int i = 0; i < index; i++) {
             previous = current;
             current = current.next;
-            if (i == index - 1) {
-                previous.next = current.next;
-            }
         }
+
+        previous.next = current.next;
         size--;
     }
 
@@ -250,7 +249,7 @@ public class SLL implements LinkedListADT, Serializable {
         }
     }
 
-     class Node implements Serializable {
+     private static class Node implements Serializable {
         private Object element;
         private Node next;
 
